@@ -43,7 +43,8 @@ const App = () => {
             <Text style={styles.title}>Consulta de CEP</Text>
             <View style={styles.titleLine}/>
         </View>
-        {/* Campo de entrada do CEP */}
+  
+        // Campo de entrada do CEP
         <TextInput
           style={styles.input}
           placeholder="Digite o CEP"
@@ -53,8 +54,7 @@ const App = () => {
           onChangeText={setCep}
         />
 
-        {/* Campo de entrada do Endereço */}
-        
+        // Campo de entrada do Endereço
         <TextInput
           style={styles.input}
           placeholder="Digite a UF"
@@ -82,7 +82,8 @@ const App = () => {
           onChangeText={setLogradouro}
         />
 
-<View style={styles.botao}>
+        // Botões
+        <View style={styles.botao}>
           <HandleSearch
             cep={cep}
             uf={uf}
@@ -116,21 +117,21 @@ const App = () => {
             )} 
 </View>
 
-      {/* Exibe mensagem de erro se houver */}
+      // Exibe mensagem de erro se houver
       {error && (
         <Text style={{ color: 'red', textAlign: 'center', marginTop: 20 }}>
           Erro: {error.message}
         </Text>
       )}
 
-      {/* Exibe mensagem de carregamento */}
+      // Exibe mensagem de carregamento
       {loading && (
         <Text style={{ textAlign: 'center', marginTop: 20 }}>
           Carregando dados...
         </Text>
       )}
 
-      {/* Exibe os dados obtidos da API ViaCEP */}
+      // Exibe os dados obtidos da API ViaCEP
       {data && !loading && (
         <View style={styles.localContainer}>
           <Text style={styles.localLogradouro}>
@@ -143,6 +144,7 @@ const App = () => {
         </View>
       )}
 
+      // Preenchendo os campos pelo histórico
       {historico.length > 0 && (
   <View style={styles.localContainer}>
     <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>Histórico de Pesquisas:</Text>
